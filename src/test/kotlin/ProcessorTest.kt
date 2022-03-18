@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test
 import sinks.ConsoleDouble
-import kotlin.test.assertEquals
+import sources.Source
 import kotlin.test.assertTrue
 
 class ProcessorTest {
@@ -8,8 +8,8 @@ class ProcessorTest {
     @Test
     fun `Load names and prints list to console when app started`() {
         val consoleSink = ConsoleDouble()
-        val nameSource = NomineeNamesSource()
-        val processor = Processor(nameSource.names, consoleSink)
+        val namesSource = NomineeNamesSource()
+        val processor = Processor(namesSource, consoleSink)
 
         processor.start()
 
