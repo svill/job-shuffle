@@ -1,12 +1,12 @@
 import sinks.ConsoleSink
+import sources.FileLinesSource
 
 fun main(args: Array<String>) {
-    println("Hello World!")
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
-
+    val namesSource = FileLinesSource()
     val consoleSink = ConsoleSink()
-    consoleSink("End")
+    val processor = Processor(namesSource, consoleSink)
+
+    processor.start()
+
+    consoleSink("** End **")
 }

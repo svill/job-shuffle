@@ -6,7 +6,7 @@ class Processor(
     private val output: Sink<String>,
 ) {
     fun start() {
-        val names = getNames.apply("not_exist.txt")
+        val names = getNames.apply("sampleNames.txt")
 
         printNomineeNames(names)
     }
