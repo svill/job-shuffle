@@ -1,9 +1,9 @@
-import sinks.ConsoleWriter
+import sinks.Sink
 import sources.Source
 
 class Processor(
     private val getNames: Source<String, List<String>>,
-    private val output: ConsoleWriter,
+    private val output: Sink<String>,
 ) {
     fun start() {
         val names = getNames.apply("not_exist.txt")
@@ -12,7 +12,7 @@ class Processor(
     }
 
      private fun printNomineeNames(names: List<String>) {
-        output.print("** List of nominees **")
-        names.forEach { name -> output.print(name) }
+        output.apply("** List of nominees **")
+        names.forEach { name -> output.apply(name) }
     }
 }
