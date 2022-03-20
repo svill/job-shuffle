@@ -1,5 +1,3 @@
 package sources
 
-interface Source<A, B> {
-    fun apply(a: A): B
-}
+typealias Source<A, B> = (a: A) -> B
