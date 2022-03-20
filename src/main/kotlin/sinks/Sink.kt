@@ -1,5 +1,3 @@
 package sinks
 
-interface Sink<A> {
-    fun apply(a: A)
-}
+typealias Sink<A> = (a: A) -> Unit

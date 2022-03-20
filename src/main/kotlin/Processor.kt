@@ -12,7 +12,7 @@ class Processor(
     }
 
      private fun printNomineeNames(names: List<String>) {
-        output.apply("** List of nominees **")
-        names.forEach { name -> output.apply(name) }
+        output("** List of nominees **")
+        names.forEach { name -> output(name) }
     }
 }

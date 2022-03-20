@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 
 class ConsoleSinkTest {
 
-    open class ConsoleDouble : ConsoleSink(), ConsoleWriter {
+    class ConsoleDouble : ConsoleSink(), ConsoleWriter {
         var lastMessage = ""
 
         override fun println(message: String) {
@@ -16,7 +16,7 @@ class ConsoleSinkTest {
     @Test
     fun `should write to the console`() {
         val sink = ConsoleDouble()
-        sink.apply("Hello World!")
+        sink("Hello World!")
         assertEquals("Hello World!", sink.lastMessage)
     }
 }

@@ -8,5 +8,5 @@ fun main(args: Array<String>) {
     println("Program arguments: ${args.joinToString()}")
 
     val consoleSink = ConsoleSink()
-    consoleSink.apply("End")
+    consoleSink("End")
 }

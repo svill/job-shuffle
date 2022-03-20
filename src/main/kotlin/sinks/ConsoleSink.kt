@@ -7,7 +7,7 @@ interface ConsoleWriter {
 }
 
 open class ConsoleSink : Sink<String>, ConsoleWriter {
-    override fun apply(a: String) {
-        println(a)
+    override fun invoke(message: String) {
+        println(message)
     }
 }

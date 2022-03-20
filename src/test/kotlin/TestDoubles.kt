@@ -10,7 +10,7 @@ class NomineeNamesSource: Source<String, List<String>> {
 class MemorySink : Sink<String> {
     val sentMessages = mutableListOf<String>()
 
-    override fun apply(a: String) {
-        sentMessages.add(a)
+    override fun invoke(input: String) {
+        sentMessages.add(input)
     }
 }
